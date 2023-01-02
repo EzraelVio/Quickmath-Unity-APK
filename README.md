@@ -6,7 +6,7 @@ Includes:
 - [the scripts for the actual game](/Script/MathGame)
 - [the scripts for the game scene UI](/Script/Menu)
 - [the scripts for highscore system](/Script/HighScore)
-- [Current builds of the game](/APK Builds)
+- [Current builds of the game](/APK%20Builds)
 
 Made by:
 - [Prabowo Darmawi/1313619001](https://github.com/EzraelVio/Quickmath-Unity-APK)
