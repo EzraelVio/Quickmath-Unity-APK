@@ -9,6 +9,6 @@ Includes:
 - [Current builds of the game](/APK%20Builds)
 
 Made by:
-- [Prabowo Darmawi/1313619001](https://github.com/EzraelVio/Quickmath-Unity-APK)
-- [Pramudio/1313619013](https://github.com/EzraelVio/Quickmath-Unity-APK)
+- [Prabowo Darmawi/1313619001](https://github.com/PrabowoD)
+- [Pramudio/1313619013](https://github.com/Pramudio-Ilkom)
 - [Nehemiah Austen Pison/1313619021](https://github.com/EzraelVio)
