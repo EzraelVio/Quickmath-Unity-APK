@@ -16,6 +16,8 @@ public class Score : MonoBehaviour
         LoadScore();
 
         DontDestroyOnLoad(this.gameObject);
+
+        nilcheck();
     }
 
     public void SaveBoard(){
@@ -30,5 +32,29 @@ public class Score : MonoBehaviour
             name[i] = data.name[i];
             score[i] = data.scores[i];
         }
+    }
+
+    public void nilcheck(){
+        if(name[0] == "" && score[0] == 0){
+            name[0] = "Vio";
+            score[0] = 25;
+        }
+        if(name[1] == "" && score[1] == 0){
+            name[1] = "Rio";
+            score[1] = 20;
+        }
+        if(name[2] == "" && score[2] == 0){
+            name[2] = "Tio";
+            score[2] = 15;
+        }
+        if(name[3] == "" && score[3] == 0){
+            name[3] = "Gio";
+            score[3] = 10;
+        }
+        if(name[4] == "" && score[4] == 0){
+            name[4] = "Fio";
+            score[4] = 5;
+        }
+        SaveBoard();
     }
 }

@@ -5,11 +5,22 @@ using TMPro;
 
 public class DataToLeaderBoard : MonoBehaviour
 {
+    [Header("Score Finder")]
+    public GameObject scoreObject;
+    private Score scores;
+    void Awake() {
+        if(scores == null) {
+            scoreObject = GameObject.FindWithTag("ScoreData");
+            scores = scoreObject.GetComponent<Score>();
+        }
+    }
+
     void Start() {
+        scores.nilcheck();
+
         putScoreBoard();
     }
 
-    public Score scores;
     public TextMeshProUGUI[] Name;
     public TextMeshProUGUI[] Score;
 

@@ -32,6 +32,8 @@ public class GameOver : MonoBehaviour
             secore = scoreObject.GetComponent<Score>();
         }
         starting();
+
+        secore.nilcheck();
     }
 
     // Update is called once per frame
@@ -67,6 +69,7 @@ public class GameOver : MonoBehaviour
     public void newScoreCheck(){
         while(!NewScore && placement < 5 && totalScore.scores != 0){
             if(secore.score[placement] < totalScore.scores){
+                Debug.Log(placement);
                 NewScore = true;
             }
             else placement += 1;

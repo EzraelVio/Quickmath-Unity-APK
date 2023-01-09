@@ -8,7 +8,7 @@ public class ScoringSystem : MonoBehaviour
     public int scores;
     private string name;
     [Header("Game Objects")]
-    public GameObject QA;
+    public QuestiontoAnswer questiontoAnswer;
     public GameObject inputfield;
 
     // Start is called before the first frame update
@@ -20,7 +20,7 @@ public class ScoringSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scores = (QA.GetComponent<QuestiontoAnswer>().correct_answer * 5) - QA.GetComponent<QuestiontoAnswer>().wrong_answer;
+        scores = (questiontoAnswer.correct_answer * 5) - questiontoAnswer.wrong_answer;
         GetComponent<Text>().text = scores.ToString();
     }
 }

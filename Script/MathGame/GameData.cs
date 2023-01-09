@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameData : MonoBehaviour
 {
     [Header("Game Objects")]
-    public QuestiontoAnswer QA;
+    public QuestiontoAnswer questiontoAnswer;
     public Timer timer;
     [Header("Difficulty Controller")]
     [Header("Variable")]
@@ -25,10 +25,10 @@ public class GameData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        QA.difficultyVariable1 = difficultyVariable1;
-        QA.difficultyVariable2 = difficultyVariable2;
-        QA.difficultyEquator1 = difficultyEquator1;
-        QA.difficultyEquator2 = difficultyEquator2;
+        questiontoAnswer.difficultyVariable1 = difficultyVariable1;
+        questiontoAnswer.difficultyVariable2 = difficultyVariable2;
+        questiontoAnswer.difficultyEquator1 = difficultyEquator1;
+        questiontoAnswer.difficultyEquator2 = difficultyEquator2;
         timer.timer = start;
         timer.add = add;
         timer.dec = dec;
