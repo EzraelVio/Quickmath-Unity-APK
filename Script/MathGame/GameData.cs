@@ -6,17 +6,17 @@ using UnityEngine.SceneManagement;
 public class GameData : MonoBehaviour
 {
     [Header("Game Objects")]
-    public GameObject QA;
-    public GameObject timer;
+    public QuestiontoAnswer QA;
+    public Timer timer;
     [Header("Difficulty Controller")]
     [Header("Variable")]
     //variable from 1 digit to 2 digit then 3 digit
-    public int difv1;
-    public int difv2;
+    public int difficultyVariable1;
+    public int difficultyVariable2;
     [Header("Equator")]
     // equation +- < dif1 +-x < dif2 +-x/
-    public int dife1;
-    public int dife2;
+    public int difficultyEquator1;
+    public int difficultyEquator2;
     [Header("Start Timer")]
     public float start;
     [Header("Add and Decrease")]
@@ -25,13 +25,13 @@ public class GameData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        QA.GetComponent<QuestiontoAnswer>().difv1 = difv1;
-        QA.GetComponent<QuestiontoAnswer>().difv2 = difv2;
-        QA.GetComponent<QuestiontoAnswer>().dife1 = dife1;
-        QA.GetComponent<QuestiontoAnswer>().dife2 = dife2;
-        timer.GetComponent<Timer>().timer = start;
-        timer.GetComponent<Timer>().add = add;
-        timer.GetComponent<Timer>().dec = dec;
+        QA.difficultyVariable1 = difficultyVariable1;
+        QA.difficultyVariable2 = difficultyVariable2;
+        QA.difficultyEquator1 = difficultyEquator1;
+        QA.difficultyEquator2 = difficultyEquator2;
+        timer.timer = start;
+        timer.add = add;
+        timer.dec = dec;
     }
 
     public void restart(){

@@ -36,6 +36,7 @@ public class Timer : MonoBehaviour
         else {
             timer = 0;
             game.SetActive(true);
+            game.GetComponent<GameOver>().newScoreCheck();
         }
         float minutes = Mathf.FloorToInt(timer / 60);
         float seconds = Mathf.FloorToInt(timer % 60);

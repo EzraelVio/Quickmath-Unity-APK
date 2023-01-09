@@ -7,18 +7,30 @@ public class GameOver : MonoBehaviour
     public GameObject[] Deact;
     public GameObject newScore;
     public ScoringSystem totalScore;
-    public Score secore;
     private int maxindex;
-    private float time = 0;
-    private int index = 0;
-    public bool NewScore = false;
+    private float time;
+    private int index;
+    public bool NewScore;
+    private bool check;
 
     [Header("NewScoreCheck")]
     public int placement = 0;
+
+    [Header("Score Finder")]
+    private GameObject scoreObject;
+    private Score secore;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        index = 0;
         maxindex = 0;
+        time = 0;
+        NewScore = false;
+        check = true;
+        if(secore == null) {
+            scoreObject = GameObject.FindWithTag("ScoreData");
+            secore = scoreObject.GetComponent<Score>();
+        }
         starting();
     }
 
@@ -33,12 +45,15 @@ public class GameOver : MonoBehaviour
                 time = 0;
             }
         }
-        if(NewScore){
-            if(time > 1){
-                newScore.SetActive(true);
-                NewScore = false;
+        if(check){
+            newScoreCheck();
+            if(NewScore){
+                if(time > 1){
+                    newScore.SetActive(true);
+                    check = false;
+                }
             }
-        } 
+        }
     }
 
     void starting(){
@@ -49,9 +64,9 @@ public class GameOver : MonoBehaviour
         }
     }
 
-    void newScoreCheck(){
-        while(!NewScore){
-            if(secore.score[placement] < placement){
+    public void newScoreCheck(){
+        while(!NewScore && placement < 5 && totalScore.scores != 0){
+            if(secore.score[placement] < totalScore.scores){
                 NewScore = true;
             }
             else placement += 1;

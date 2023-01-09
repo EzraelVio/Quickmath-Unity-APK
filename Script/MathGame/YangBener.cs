@@ -5,24 +5,24 @@ using UnityEngine.UI;
 
 public class YangBener : MonoBehaviour
 {
-    public GameObject QA;
-    public GameObject timer;
+    public QuestiontoAnswer questiontoAnswer;
+    public Timer timer;
     public GameObject[] AddDec;
     public bool correction = false;
     public void needed(){
         if(correction){
             SoundManager.instance.ClickSfx();
-            QA.GetComponent<QuestiontoAnswer>().correct_answer += 1;
-            timer.GetComponent<Timer>().AddTime();
+            questiontoAnswer.correct_answer += 1;
+            timer.AddTime();
             AddDec[0].GetComponent<Animator>().SetTrigger("do");
-            AddDec[0].GetComponent<Text>().text = "+" + timer.GetComponent<Timer>().add.ToString();
+            AddDec[0].GetComponent<Text>().text = "+" + timer.add.ToString();
         }
         else {
             SoundManager.instance.ClickSfx();
-            QA.GetComponent<QuestiontoAnswer>().wrong_answer += 1;
-            timer.GetComponent<Timer>().DecTime();
+            questiontoAnswer.wrong_answer += 1;
+            timer.DecTime();
             AddDec[1].GetComponent<Animator>().SetTrigger("do");
-            AddDec[1].GetComponent<Text>().text = "-" + timer.GetComponent<Timer>().dec.ToString();
+            AddDec[1].GetComponent<Text>().text = "-" + timer.dec.ToString();
         }
     }
 }
