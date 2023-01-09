@@ -10,6 +10,7 @@ public class MMManager : MonoBehaviour
     public GameObject mainMenuPanel;
     public GameObject infoPanel;
     public GameObject scoreBoard;
+    public GameObject credits;
     public GameObject infoPanelPageOne;
     public GameObject infoPanelPageTwo;
 
@@ -17,6 +18,7 @@ public class MMManager : MonoBehaviour
         mainMenuPanel.SetActive(true);
         infoPanel.SetActive(false);
         scoreBoard.SetActive(false);
+        credits.SetActive(false);
     }
 
     public void Play(){
@@ -44,11 +46,18 @@ public class MMManager : MonoBehaviour
         scoreBoard.SetActive(true);
     }
 
+    public void Credits(){
+        SoundManager.instance.ClickSfx();
+        mainMenuPanel.SetActive(false);
+        credits.SetActive(true);
+    }
+
     public void Back() {
         SoundManager.instance.ClickSfx();
         mainMenuPanel.SetActive(true);
         infoPanel.SetActive(false);
         scoreBoard.SetActive(false);
+        credits.SetActive(false);
     }
 
     public void Quit() {
